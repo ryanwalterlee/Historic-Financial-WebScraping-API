@@ -5,6 +5,7 @@ An API that scrapes past 10 years EPS and PE ratio of a company that is on the s
 For example, 
 
 localhost:3000/eps?ticker=AAPL
+
 localhost:3000/pe?ticker=AAPL
 
 to get an array of past 10 EPS and PE ratio from ticker AAPL (Apple)
