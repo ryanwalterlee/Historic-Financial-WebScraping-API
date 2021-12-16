@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', scrapePE, function(req, res, next) {
-  res.send(res.locals.pe);
+  res.json({pe: res.locals.pe});
 });
 
 async function scrapePE(req, res, next) {

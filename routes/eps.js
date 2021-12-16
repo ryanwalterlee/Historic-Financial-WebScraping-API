@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', scrapeEPS, function(req, res) {
-  res.send(res.locals.eps);
+  res.json({eps: res.locals.eps});
 });
 
 async function scrapeEPS(req, res, next) {
@@ -32,7 +32,7 @@ async function scrapeEPS(req, res, next) {
           if (curr + (i*2) >= td.length) {
               break;
           }
-          newArray[i] = td[curr + (i*2)].innerText;
+          newArray[i] = td[curr + (i*2)].innerText.substring(1);
       }
       return newArray;
       });
