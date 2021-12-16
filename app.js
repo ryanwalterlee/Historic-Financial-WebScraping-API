@@ -9,10 +9,9 @@ var peRatioRouter = require('./routes/peRatio');
 
 var app = express();
 
+const IP = process.env.IP || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("App is listening");
-});
+app.listen(PORT, IP);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
