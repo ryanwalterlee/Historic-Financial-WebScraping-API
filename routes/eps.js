@@ -12,7 +12,8 @@ async function scrapeEPS(req, res, next) {
   const browser = await puppeteer.launch({'args' : [
     '--no-sandbox',
     '--disable-setuid-sandbox'
-  ]});
+  ],
+  ignoreDefaultArgs: ['--disable-extensions']});
   const page = await browser.newPage();
 
   process.on('unhandledRejection', (reason, p) => {
