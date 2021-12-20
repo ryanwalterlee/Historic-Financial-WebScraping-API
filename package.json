@@ -18,7 +18,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "phoenix": "^1.6.4",
+    "phoenix": "^1.6.5",
     "puppeteer": "^13.0.0"
   },
   "devDependencies": {
