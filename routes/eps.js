@@ -14,6 +14,12 @@ async function scrapeEPS(req, res, next) {
     '--disable-setuid-sandbox'
   ]});
   const page = await browser.newPage();
+
+  process.on('unhandledRejection', (reason, p) => {
+    console.error('Unhandled Rejection at: Promise', p, 'reason:', reason);
+    browser.close();
+  });
+
   await page.goto("https://www.macrotrends.net/stocks/charts/GOOG/alphabet/eps-earnings-per-share-diluted");
 
   await page.waitForSelector('#jqxInput'); // wait for input box to appear
