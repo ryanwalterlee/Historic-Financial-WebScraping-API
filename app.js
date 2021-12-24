@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors'); 
 
-
+// importing routes
 var epsRouter = require('./routes/eps');
 var peRatioRouter = require('./routes/peRatio');
 
@@ -27,8 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.options('*', cors());
 
+// all routes
 app.use('/eps', epsRouter);
 app.use('/pe', peRatioRouter);
+
+// home page with no query strings
 app.get('/', (req, res) => {
   res.send("Enter /eps or /pe followed by ?ticker=${ticker}");
 })
