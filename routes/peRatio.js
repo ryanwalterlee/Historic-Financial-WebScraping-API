@@ -21,7 +21,7 @@ async function scrapePE(req, res, next) {
     browser.close();
   });
 
-  await page.goto("https://www.macrotrends.net/stocks/charts/GOOG/alphabet/pe-ratio");
+  await page.goto("https://www.macrotrends.net/stocks/charts/MSFT/microsoft/pe-ratio");
 
   await page.waitForSelector('#jqxInput'); // wait for input box to appear
   await page.focus('#jqxInput');
